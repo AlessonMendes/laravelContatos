@@ -14,4 +14,5 @@
 Route::get('/', ['uses' => 'contatoController@index']);
 Route::post('/', ['uses' => 'contatoController@cadastrar']);
 
+Route::get('/listar', ['uses' => 'contatoController@lista']);
 

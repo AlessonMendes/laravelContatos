@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contato;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class contatoController extends Controller
 {
@@ -26,5 +27,10 @@ class contatoController extends Controller
     	$contato->save();
 
     	return view('formulario',['salvou'=>true]);
+    }
+
+    public function lista(){
+  		$contatos= DB::table('contatos')->paginate(3);
+        return view('lista', ['contatos'=>$contatos]);
     }
 }
