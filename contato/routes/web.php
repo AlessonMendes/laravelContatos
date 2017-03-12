@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['uses' => 'contatoController@index']);
+Route::post('/', ['uses' => 'contatoController@cadastrar']);
+
+
